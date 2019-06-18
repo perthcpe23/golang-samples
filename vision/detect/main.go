@@ -45,25 +45,25 @@ func main() {
 		name       string
 		local, uri func(io.Writer, string) error
 	}{
-		{"detectFaces", detectFaces, detectFacesURI},
-		{"detectLabels", detectLabels, detectLabelsURI},
-		{"detectLandmarks", detectLandmarks, detectLandmarksURI},
+		// {"detectFaces", detectFaces, detectFacesURI},
+		// {"detectLabels", detectLabels, detectLabelsURI},
+		// {"detectLandmarks", detectLandmarks, detectLandmarksURI},
 		{"detectText", detectText, detectTextURI},
-		{"detectDocumentText", detectDocumentText, detectDocumentTextURI},
-		{"detectLogos", detectLogos, detectLogosURI},
-		{"detectProperties", detectProperties, detectPropertiesURI},
-		{"detectCropHints", detectCropHints, detectCropHintsURI},
-		{"detectWeb", detectWeb, detectWebURI},
-		{"detectWebGeo", detectWebGeo, detectWebGeoURI},
-		{"detectSafeSearch", detectSafeSearch, detectSafeSearchURI},
-		{"localizeObjects", localizeObjects, localizeObjectsURI},
+		// {"detectDocumentText", detectDocumentText, detectDocumentTextURI},
+		// {"detectLogos", detectLogos, detectLogosURI},
+		// {"detectProperties", detectProperties, detectPropertiesURI},
+		// {"detectCropHints", detectCropHints, detectCropHintsURI},
+		// {"detectWeb", detectWeb, detectWebURI},
+		// {"detectWebGeo", detectWebGeo, detectWebGeoURI},
+		// {"detectSafeSearch", detectSafeSearch, detectSafeSearchURI},
+		// {"localizeObjects", localizeObjects, localizeObjectsURI},
 	}
 
 	for _, sample := range samples {
 		if !strings.Contains(sample.name, match) {
 			continue
 		}
-		fmt.Println("---", sample.name)
+		// fmt.Println("---", sample.name)
 		var err error
 		if strings.Contains(path, "://") {
 			err = sample.uri(os.Stdout, path)

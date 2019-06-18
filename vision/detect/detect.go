@@ -186,10 +186,16 @@ func detectText(w io.Writer, file string) error {
 	if len(annotations) == 0 {
 		fmt.Fprintln(w, "No text found.")
 	} else {
-		fmt.Fprintln(w, "Text:")
-		for _, annotation := range annotations {
-			fmt.Fprintf(w, "%q\n", annotation.Description)
+		// fmt.Fprintln(w, "Text:")
+		text := []string{}
+		for _, annotation := range annotations[1:] {
+			text = append(text, annotation.Description)
 		}
+		fmt.Fprintf(w, "%s\n", strings.Join(text, " "))
+
+		// for _, annotation := range annotations[1:] {
+		// 	fmt.Fprintf(w, "%q\n", annotation.Description)
+		// }
 	}
 
 	return nil
